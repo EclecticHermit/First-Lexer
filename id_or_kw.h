@@ -1,9 +1,8 @@
-//Joy Chakraborty CS280 Section 008
 #include <iostream>
 #include <cctype>
 #include <regex>
 #include <string>
-#include "lex.h" 
+#include "lex.h" //Not included in repository for copyright reasons
 using namespace std;
 
 regex regexIF(R"rgx(^(if)$)rgx");
