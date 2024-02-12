@@ -2,7 +2,7 @@
 #include <cctype>
 #include <regex>
 #include <string>
-#include "lex.h" //Not included in repository for copyright reasons
+#include "lex.h" //File copyright owned by professor. Therefore, it is not included in this repository
 using namespace std;
 
 regex regexIF(R"rgx(^(if)$)rgx");
