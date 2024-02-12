@@ -1,4 +1,4 @@
-Description of Simple Perl-Like in EBNF
+Description of the language of the lexer in EBNF
 
 1. Prog ::= StmtList
 2. StmtList ::= Stmt ;{ Stmt; }
