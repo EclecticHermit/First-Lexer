@@ -9,50 +9,56 @@ int main(int argc, char* argv[])
 {
 	LexItem item;
 	ifstream reader;
-    bool v=false; 
+	bool v=false; 
 	bool ident=false; 
 	bool nconst=false;
 	bool sconst=false;
-    int lines=1, tokens=0, ids=0, nums=0, strings=0;
-    vector<LexItem> vectorTotal;
-    vector<LexItem> vectorIdent;
-    vector<LexItem> vectorNumbers;
-    vector<LexItem> vectorStrings;
-    string filename;
+	int lines=1, tokens=0, ids=0, nums=0, strings=0;
+	vector<LexItem> vectorTotal;
+	vector<LexItem> vectorIdent;
+	vector<LexItem> vectorNumbers;
+	vector<LexItem> vectorStrings;
+	string filename;
     
 	
 	if (argc == 1)
-    {
+	{
 		cerr << "NO SPECIFIED INPUT FILE." << endl;
 		exit(1);
 	}
-    filename=argv[1];
-    reader.open(filename);
-    if(!(reader.is_open()))
-    {
-        cerr<<"CANNOT OPEN THE FILE " <<filename<<endl;
-        exit(1);
-    }
-    if(reader.peek()==EOF)
-    {
-        cout<<"Lines: 0"<<endl;
-        cout<<"Empty File."<<endl;
-        exit(0);
-    }
-    if(argc>2){   
-        for(int i=2; i<argc; i++){            
-            string flag=argv[i];
-            if(flag[0] != '-'){
-                cerr<< "ONLY ONE FILE NAME IS ALLOWED."<<endl;
+	filename=argv[1];
+	reader.open(filename);
+	if(!(reader.is_open()))
+	{
+		cerr<<"CANNOT OPEN THE FILE " <<filename<<endl;
+		exit(1);
+	}
+	if(reader.peek()==EOF)
+	{
+		cout<<"Lines: 0"<<endl;
+		cout<<"Empty File."<<endl;
+		exit(0);
+	}
+	if(argc>2)
+	{
+		for(int i=2; i<argc; i++)
+		{
+			string flag=argv[i];
+			if(flag[0] != '-')
+			{
+				cerr<< "ONLY ONE FILE NAME IS ALLOWED."<<endl;
                 exit(1);
             }
-            if(flag == "-v"){
+            if(flag == "-v")
+            {
                 v=true;
             }
-            else if(flag =="-ident"){
+            else if(flag =="-ident")
+            {
                 ident=true;
             }
-            else if(flag == "-nconst"){
+            else if(flag == "-nconst")
+            {
                 nconst=true;
             }
             else if(flag == "-sconst"){
@@ -132,8 +138,10 @@ int main(int argc, char* argv[])
     strings=lexemeStrings.size();
     
     
-    if(v==true){
-        for(int i=0; i<tokens; i++){
+    if(v==true)
+    {
+        for(int i=0; i<tokens; i++)
+        {
             cout << vectorTotal[i];
         }
     }
@@ -157,7 +165,6 @@ int main(int argc, char* argv[])
     }
     if(nconst==true)
     {
-        
         cout << "NUMBERS:" << endl;
         for(int i=0; i<nums; i++)
         {
