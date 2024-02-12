@@ -1,7 +1,6 @@
-//Joy Chakraborty CS280 Section 008
 #include "RA5.h"
 #include <fstream>
-#include <vector>
+#include <vector>       
 #include <bits/stdc++.h>
 
 using namespace std;
