@@ -61,10 +61,12 @@ int main(int argc, char* argv[])
             {
                 nconst=true;
             }
-            else if(flag == "-sconst"){
+            else if(flag == "-sconst")
+            {
                 sconst=true;
             }
-            else{
+            else
+            {
                 cerr<<"UNRECOGNIZED FLAG {"<<flag<<"}"<<endl;
                 exit(1);
             }
